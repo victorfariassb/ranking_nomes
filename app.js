@@ -165384,20 +165384,33 @@ nomes = [
 
 let entrada = document.querySelector('input')
 
-let saida = document.querySelector('output')
+let resposta = document.querySelector('.resposta output:nth-of-type(1)')
+
+let saida = document.querySelector('.resposta output:nth-of-type(2)')
 
 let preenchimento = document.querySelector( '.preenchimento' )
 
 let posicao = document.querySelector('.posicao')
+
 
 entrada.addEventListener('input', validar)
 
 function validar() {
     let valor = entrada.value.trim().toLowerCase()
     for (let item of nomes) {
-      if (valor == item.nome.toLowerCase()) {
-        posicao.innerHTML = "<p>Você está na <b>" + item.ranking + "</b>ª posição do Brasil</p>"
-        saida.textContent = "Existem outras " + (item.quantidade - 1).toLocaleString('pt-BR') + " de pessoas com o teu nome"
+        if (valor == item.nome.toLowerCase()) {
+            console.log(item.ranking)
+            if (item.ranking > 0 && item.ranking <= 100) {
+            resposta.innerHTML = "Parece que clonaram você..." }
+            if (item.ranking > 100 && item.ranking <= 1000) {
+            resposta.innerHTML = "O meu também é " + item.nome }
+            if (item.ranking > 1000) {
+            resposta.innerHTML = "Não é possível isso" } 
+            if (item.ranking == 0 || item.ranking > 31916.5) {
+              limpar()
+          }
+        posicao.innerHTML = "<p>Você está na <b>" + (item.ranking).toLocaleString('pt-BR') + "</b>ª posição do Brasil</p>"
+        saida.innerHTML = "<p>Desde 1930, outras <b>" + (item.quantidade - 1).toLocaleString('pt-BR') + "</b> pessoas nasceram com o teu nome<p>"
         break
       } else {
           limpar()
@@ -165408,6 +165421,7 @@ function validar() {
 function limpar() {
 
     saida.textContent = ''
+    resposta.textContent = ''
     posicao.textContent = ''
   
   }
