@@ -10,13 +10,13 @@ body {
   background-color: #2173A6;
   font-family: 'Gemunu Libre';
   color: #F2EDE9;
-  width: 50%;
+  width: 80%
 }
 
 h1:first-of-type{
   font-size: 4.5rem;
   font-weight: 500;
-  margin-bottom: 0;
+  margin-bottom: 0.4rem;
 }
 
 h1:nth-of-type(2){
@@ -25,15 +25,17 @@ h1:nth-of-type(2){
   font-size: 3.5rem;
   font-weight: 400;
   margin: 0 auto 8rem;
+  line-height: 0.8;
 }
 
 .descricao{
   font-weight: 200;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .resposta{
   margin: 2rem;
+  font-size: 1.2rem;
 }
 
 

@@ -165388,6 +165388,7 @@ let saida = document.querySelector('output')
 
 let preenchimento = document.querySelector( '.preenchimento' )
 
+let posicao = document.querySelector('.posicao')
 
 entrada.addEventListener('input', validar)
 
@@ -165395,7 +165396,8 @@ function validar() {
     let valor = entrada.value.trim().toLowerCase()
     for (let item of nomes) {
       if (valor == item.nome.toLowerCase()) {
-        saida.textContent = item.quantidade + " de pessoas com o teu nome"
+        posicao.innerHTML = "<p>Você está na <b>" + item.ranking + "</b>ª posição do Brasil</p>"
+        saida.textContent = "Existem outras " + (item.quantidade - 1).toLocaleString('pt-BR') + " de pessoas com o teu nome"
         break
       } else {
           limpar()
@@ -165406,6 +165408,6 @@ function validar() {
 function limpar() {
 
     saida.textContent = ''
-    preenchimento.style.width = '0%'
+    posicao.textContent = ''
   
   }
