@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;500;800&family=Hurricane&family=League+Spartan:wght@100;300;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  margin: auto;
+  background-color: #2173A6;
+  font-family: 'Gemunu Libre';
+  color: #F2EDE9;
+  width: 80%
+}
+
+h1{
+  font-size: 4.5rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}
+
+a{
+  font-family: 'Hurricane';
+  color: #F2D750;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 0.8;
+  text-decoration: none;
+}
+
+.descricao{
+  margin: 5rem auto 0;
+  font-weight: 350;
+  font-size: 1.5rem;
+}
+
+body p .tooltiptext {
+  position: flex;
+  text-align: center;
+  visibility: hidden;
+  background-color: #000;
+  color: #FFF;
+  padding: 0.2rem;
+  font-size: 1rem;
+}
+
+body p:hover .tooltiptext {
+  visibility: visible;
+}
+
+.resposta{
+  margin: 2rem;
+  font-size: 1.2rem;
+}
+
+.resposta output:nth-of-type(1) {
+  color: #F2D750;
+  font-weight: 
+  450;
+}
+
+.top {
+  font-family: 'Gemunu Libre';
+  margin: 1rem auto 2rem;
+  display: block;
+  font-size: 1rem;
+}
+
+.tabela-10 {
+  display: none;
+  margin: 2rem;
+}
+
+.voltar {
+  display: none;
+  font-family: 'Gemunu Libre';
+  margin: 1rem auto 2rem;
+  font-size: 1rem;
+}

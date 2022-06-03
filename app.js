@@ -1,4 +1,3 @@
-
 nomes = [
     {
         "nome": "Maria",
@@ -165421,11 +165420,11 @@ voltar.onclick = function() {
 
 
 function validar() {
-    let valor = entrada.value.trim().toLowerCase()
+    let valor = entrada.value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     for (let item of nomes) {
         if (valor == item.nome.toLowerCase()) {
             if (item.ranking > 0 && item.ranking <= 100) {
-            resposta.innerHTML = "Seu nome é TOP🔝" }
+            resposta.innerHTML = "Seu nome é POP🔝" }
             if (item.ranking > 100 && item.ranking <= 1000) {
             resposta.innerHTML = "Nem top, nem flop, muiito pelo contrário"}
             if (item.ranking > 1000) {
