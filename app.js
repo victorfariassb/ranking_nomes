@@ -165392,20 +165392,44 @@ let preenchimento = document.querySelector( '.preenchimento' )
 
 let posicao = document.querySelector('.posicao')
 
+let button = document.querySelector('.top')
+
+let tabela = document.querySelector('.tabela-10')
+
+let descricao = document.querySelector('.descricao')
+
+let voltar = document.querySelector('.voltar')
 
 entrada.addEventListener('input', validar)
+
+
+button.onclick = function() {
+    let top = nomes.slice(0, 10)
+    tabela.style.display = 'block'
+    button.style.display = 'none'
+    descricao.style.display = 'none'
+    voltar.style.display = 'block'
+    for (let pessoa of top) {
+        let listItem = document.createElement('p')
+        listItem.innerText = pessoa.ranking + 'º — ' + pessoa.nome + ': ' + (pessoa.quantidade).toLocaleString('pt-BR')
+        tabela.appendChild(listItem)
+    }
+}
+
+voltar.onclick = function() {
+    document.location.reload()}
+
 
 function validar() {
     let valor = entrada.value.trim().toLowerCase()
     for (let item of nomes) {
         if (valor == item.nome.toLowerCase()) {
-            console.log(item.ranking)
             if (item.ranking > 0 && item.ranking <= 100) {
-            resposta.innerHTML = "Parece que clonaram você..." }
+            resposta.innerHTML = "Seu nome é TOP🔝" }
             if (item.ranking > 100 && item.ranking <= 1000) {
-            resposta.innerHTML = "O meu também é " + item.nome }
+            resposta.innerHTML = "Nem top, nem flop, muiito pelo contrário"}
             if (item.ranking > 1000) {
-            resposta.innerHTML = "Não é possível isso" } 
+            resposta.innerHTML = "Seu nome não deve ter aparecido nas latinhas de coca-cola" } 
             if (item.ranking == 0 || item.ranking > 31916.5) {
               limpar()
           }

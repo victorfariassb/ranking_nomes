@@ -35,16 +35,13 @@ a{
 }
 
 body p .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
+  position: flex;
   text-align: center;
-  padding: 5px 0;
+  visibility: hidden;
+  background-color: #000;
+  color: #FFF;
+  padding: 0.2rem;
   font-size: 1rem;
-  border-radius: 6px;
-  position: absolute;
-  z-index: 1;
 }
 
 body p:hover .tooltiptext {
@@ -60,4 +57,23 @@ body p:hover .tooltiptext {
   color: #F2D750;
   font-weight: 
   450;
+}
+
+.top {
+  font-family: 'Gemunu Libre';
+  margin: 1rem auto 2rem;
+  display: block;
+  font-size: 1rem;
+}
+
+.tabela-10 {
+  display: none;
+  margin: 2rem;
+}
+
+.voltar {
+  display: none;
+  font-family: 'Gemunu Libre';
+  margin: 1rem auto 2rem;
+  font-size: 1rem;
 }
