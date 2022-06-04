@@ -165416,7 +165416,11 @@ button.onclick = function() {
 }
 
 voltar.onclick = function() {
-    document.location.reload()}
+    tabela.style.display = 'none'
+    tabela.textContent = ''
+    button.style.display = 'inline'
+    descricao.style.display = 'block'
+    voltar.style.display = 'none'}
 
 
 function validar() {
