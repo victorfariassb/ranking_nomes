@@ -57982,21 +57982,31 @@ let voltar = document.querySelector('.voltar')
 
 entrada.addEventListener('input', validar)
 
-
+ // função que funciona quando botão é clicado
 button.onclick = function() {
+    // pega somente os 10 primeiros nomes da lista
     let top = nomes.slice(0, 10)
+
+    // faz a mudança para aparecer elementos e desaparecer outros elementos
     tabela.style.display = 'block'
     button.style.display = 'none'
     descricao.style.display = 'none'
     voltar.style.display = 'block'
+
+    // para cada pessoa no top 10
     for (let pessoa of top) {
+        // crie um elemento <p>
         let listItem = document.createElement('p')
+
+        // adicione o texto com a info de cada pesosa
         listItem.innerText = pessoa.ranking + 'º — ' + pessoa.nome + ': ' + (pessoa.quantidade).toLocaleString('pt-BR')
         tabela.appendChild(listItem)
     }
 }
 
+// outra função que funciona ao clicar
 voltar.onclick = function() {
+    // retorna o formato inicial
     tabela.style.display = 'none'
     tabela.textContent = ''
     button.style.display = 'inline'
@@ -58005,8 +58015,10 @@ voltar.onclick = function() {
 
 
 function validar() {
+    // usuário escolhe nome e programa faz com que o valor seja entendido mesmo com espaços, caixa alta e acento
     let valor = entrada.value.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     for (let item of nomes) {
+        // o programa vai testar cada nome e, quando encontrar o correto, irá parar com uma fala específica
         if (valor == item.nome.toLowerCase()) {
             if (item.ranking > 0 && item.ranking <= 100) {
             resposta.innerHTML = "Seu nome é POP🔝" }
@@ -58014,9 +58026,11 @@ function validar() {
             resposta.innerHTML = "Nem top, nem flop, muiito pelo contrário"}
             if (item.ranking > 1000) {
             resposta.innerHTML = "Seu nome não deve ter aparecido nas latinhas de coca-cola" } 
-            if (item.ranking == 0 || item.ranking > 31916.5) {
+            // caso o nome não exista, não vai aparecer nada e vai limpar os dados que apareceram antes
+            if (item.ranking == 0 || item.ranking > 11592) {
               limpar()
           }
+        // aqui é para acrescentar os dados personalizados na resposta
         posicao.innerHTML = "<p>Você está na <b>" + (item.ranking).toLocaleString('pt-BR') + "</b>ª posição do Brasil</p>"
         saida.innerHTML = "<p>Desde 1930, outras <b>" + (item.quantidade - 1).toLocaleString('pt-BR') + "</b> pessoas nasceram com o teu nome<p>"
         break
