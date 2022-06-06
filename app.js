@@ -58009,7 +58009,7 @@ voltar.onclick = function() {
     // retorna o formato inicial
     tabela.style.display = 'none'
     tabela.textContent = ''
-    button.style.display = 'inline'
+    button.style.display = 'block'
     descricao.style.display = 'block'
     voltar.style.display = 'none'}
 
