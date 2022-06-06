@@ -57999,7 +57999,7 @@ button.onclick = function() {
         let listItem = document.createElement('p')
 
         // adicione o texto com a info de cada pesosa
-        listItem.innerText = pessoa.ranking + 'º — ' + pessoa.nome + ': ' + (pessoa.quantidade).toLocaleString('pt-BR')
+        listItem.innerHTML = pessoa.ranking + 'º — ' +  '<b>' + pessoa.nome + ': ' +  '</b>' + (pessoa.quantidade).toLocaleString('pt-BR')
         tabela.appendChild(listItem)
     }
 }
