@@ -10,16 +10,17 @@ body {
   background-color: #2173A6;
   font-family: 'Gemunu Libre';
   color: #F2EDE9;
-  width: 70%;
+  width: 30vw;
 }
 
 h1{
   font-size: 4.5rem;
   font-weight: 500;
   margin-bottom: 0.4rem;
+  margin-top: 2vh;
 }
 
-a{
+body > a{
   font-family: 'Hurricane';
   color: #F2D750;
   font-size: 3.7rem;
@@ -50,7 +51,7 @@ body p:hover .tooltiptext {
 
 .resposta{
   margin: 2rem 0;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .resposta output:nth-of-type(1) {
@@ -81,7 +82,21 @@ body p:hover .tooltiptext {
 }
 
 footer {
-  font-size: 1rem;
-  line-height: 1.4rem;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
   font-weight: 300;
+  margin-top: 5vh;
+}
+
+footer > a {
+  font-family: 'Gemunu Libre';
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #F2D750;
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 80vw;
+  }
 }

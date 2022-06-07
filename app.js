@@ -57980,6 +57980,8 @@ let descricao = document.querySelector('.descricao')
 
 let voltar = document.querySelector('.voltar')
 
+let footer = document.querySelector('footer')
+
 entrada.addEventListener('input', validar)
 
  // função que funciona quando botão é clicado
@@ -57992,6 +57994,8 @@ button.onclick = function() {
     button.style.display = 'none'
     descricao.style.display = 'none'
     voltar.style.display = 'block'
+    footer.style.display = 'none'
+
 
     // para cada pessoa no top 10
     for (let pessoa of top) {
@@ -57999,7 +58003,7 @@ button.onclick = function() {
         let listItem = document.createElement('p')
 
         // adicione o texto com a info de cada pesosa
-        listItem.innerHTML = pessoa.ranking + 'º — ' +  '<b>' + pessoa.nome + ': ' +  '</b>' + (pessoa.quantidade).toLocaleString('pt-BR')
+        listItem.innerHTML = pessoa.ranking + 'º. ' +  '<b>' + pessoa.nome + ': ' +  '</b>' + (pessoa.quantidade).toLocaleString('pt-BR')
         tabela.appendChild(listItem)
     }
 }
@@ -58011,7 +58015,9 @@ voltar.onclick = function() {
     tabela.textContent = ''
     button.style.display = 'block'
     descricao.style.display = 'block'
-    voltar.style.display = 'none'}
+    voltar.style.display = 'none'
+    footer.style.display = 'block'
+}
 
 
 function validar() {
@@ -58028,14 +58034,17 @@ function validar() {
             resposta.innerHTML = "Seu nome não deve ter aparecido nas latinhas de coca-cola" } 
             // caso o nome não exista, não vai aparecer nada e vai limpar os dados que apareceram antes
             if (item.ranking == 0 || item.ranking > 11592) {
-              limpar()
+                limpar()
           }
         // aqui é para acrescentar os dados personalizados na resposta
         posicao.innerHTML = "<p>Você está na <b>" + (item.ranking).toLocaleString('pt-BR') + "</b>ª posição do Brasil</p>"
         saida.innerHTML = "<p>Desde 1930, outras <b>" + (item.quantidade - 1).toLocaleString('pt-BR') + "</b> pessoas nasceram com o teu nome<p>"
+        footer.style.display = 'none'
+
         break
       } else {
           limpar()
+          footer.style.display = 'block'
       }
     }
 }
