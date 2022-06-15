@@ -95,7 +95,7 @@ footer > a {
   color: #F2D750;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   body {
     width: 80vw;
   }
